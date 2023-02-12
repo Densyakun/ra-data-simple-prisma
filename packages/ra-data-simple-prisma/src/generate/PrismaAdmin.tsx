@@ -6,6 +6,7 @@ import {
 } from "react-admin";
 import { Prisma } from "@prisma/client";
 import { GenerateList } from "./GenerateList";
+import { GenerateCreate } from "./GenerateCreate";
 import { GenerateEdit } from "./GenerateEdit";
 import { GenerateShow } from "./GenerateShow";
 
@@ -37,6 +38,7 @@ const PrismaAdmin = ({
             key={model.name}
             name={model.name}
             list={<GenerateList model={model} />}
+            create={<GenerateCreate model={model} />}
             edit={<GenerateEdit model={model} />}
             show={<GenerateShow model={model} />}
           />
