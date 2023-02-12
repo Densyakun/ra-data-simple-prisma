@@ -30,15 +30,15 @@ const PrismaAdmin = ({
   <Admin {...adminProps}>
     {otherChildren}
     {
-      resources
-      || models.map(model =>
+      resources ||
+      models && models.map(model =>
         model.fields[0].name === "id" && (
           <Resource
             key={model.name}
             name={model.name}
-            list={<GenerateList model={model as any} />}
-            edit={<GenerateEdit model={model as any} />}
-            show={<GenerateShow model={model as any} />}
+            list={<GenerateList model={model} />}
+            edit={<GenerateEdit model={model} />}
+            show={<GenerateShow model={model} />}
           />
         )
       )
